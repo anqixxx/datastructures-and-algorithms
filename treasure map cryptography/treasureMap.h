@@ -116,13 +116,14 @@ private:
     // changes the pixel at position loc to consist of colour channel
     // values which are 50% of their original. Note that because of 
     // our encoding scheme which essentially invalidates the lower
-    // order bits, you should compute each value as ,2*(x/4) where
+    // order bits, you should compute each value as 2*(x/4), where
     // x is the integer value of a colour channel.
 
     void setGrey(PNG & im, pair<int,int> loc);
 
-    int dencode(int higherorder, int change, pair<int,int> index);
+    int encode(int rgb, int d, string color);
 
+    void drawRedBox(PNG & im, pair<int,int> pos);
 
 // ========= private member variables ================
 
